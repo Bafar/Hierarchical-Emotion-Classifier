@@ -1,0 +1,68 @@
+{
+  "paths": {
+    "output_json": "output.json",
+    "output_jsonl": "outputs.jsonl",
+    "primary_bert_base": "D:/bert_base_chinese_wwm",
+    "secondary_bert_base": "D:/bert_base_chinese_wwm - 副本"
+  },
+  "routing": {
+    "enable_correction": true,
+    "top2_min_probability": 0.125,
+    "compatibility_log_odds_weight": 0.6,
+    "compatibility_log_odds_clip": 4.0,
+    "minimum_reversal_log_gain": 0.5,
+    "rejection_thresholds": {
+      "positive_acknowledgment": {
+        "probability": 0.25,
+        "margin": 0.0
+      },
+      "positive_affect": {
+        "probability": 0.25,
+        "margin": 0.05
+      },
+      "conflict_repair": {
+        "probability": 0.25,
+        "margin": 0.0
+      },
+      "emotional_support": {
+        "probability": 0.25,
+        "margin": 0.0
+      },
+      "cognitive_guidance": {
+        "probability": 0.25,
+        "margin": 0.0
+      },
+      "casual_engagement": {
+        "probability": 0.25,
+        "margin": 0.3
+      }
+    },
+    "primary_temperature": 1.0,
+    "secondary_temperatures": {
+      "positive_acknowledgment": 1.0,
+      "positive_affect": 1.0,
+      "conflict_repair": 1.0,
+      "emotional_support": 1.0,
+      "cognitive_guidance": 1.0,
+      "casual_engagement": 1.0
+    }
+  },
+  "inference": {
+    "device": "cuda:0",
+    "primary_device": "cuda:0",
+    "secondary_device": "cuda:0",
+    "max_length": 512,
+    "max_history_messages": 4,
+    "batch_size": 16,
+    "warmup_on_startup": true,
+    "gpu_acquire_timeout_seconds": 0,
+    "clear_cuda_cache_after_branch": true
+  },
+  "validation": {
+    "validate_bert_base_architecture": true
+  },
+  "diagnostics": {
+    "routing_trace_enabled": false,
+    "routing_trace_jsonl": "./scripts/model_runtime/routing_trace.jsonl"
+  }
+}

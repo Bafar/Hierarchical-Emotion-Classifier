@@ -1,0 +1,6 @@
+# Preserve exact bytes: model metadata validates feature-code SHA256 hashes.
+# Disabling text normalization prevents core.autocrlf from changing those hashes.
+* -text
+
+# Store all seven model weights with Git Large File Storage.
+*.safetensors filter=lfs diff=lfs merge=lfs -text

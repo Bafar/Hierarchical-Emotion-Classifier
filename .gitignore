@@ -1,0 +1,28 @@
+# Python and local development caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+.venv/
+venv/
+
+# Local secrets; a documented example may be committed
+.env
+.env.*
+!.env.example
+
+# Local model provenance; not required for inference
+/model/bundle_manifest.json
+
+# Generated predictions, logs and runtime caches
+/output.json
+/outputs.jsonl
+/scripts/
+*.log
+
+# Operating-system files
+.DS_Store
+Thumbs.db
